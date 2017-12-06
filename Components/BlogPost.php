@@ -11,9 +11,9 @@ namespace Components;
 
 class BlogPost implements Publication
 {
-    public $headBlogs;
-    public $textBlogs;
-    public $category;
+    private $headBlogs;
+    private $textBlogs;
+    private $category;
     private $comments;
 
     public function __construct($headBlog, $textBlog, $category)
@@ -28,6 +28,16 @@ class BlogPost implements Publication
         $this->comments[] = $comment;
     }
 
+    public function getTextBlogs()
+    {
+        return $this->textBlogs;
+    }
+
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
     public function getComment()
     {
         return $this->comments;
@@ -36,4 +46,23 @@ class BlogPost implements Publication
     public function getHead(){
         return $this->headBlogs;
     }
+
+    public function setHeadBlogs($headBlogs)
+    {
+        $this->headBlogs = $headBlogs;
+    }
+
+    public function setTextBlogs($textBlogs)
+    {
+        $this->textBlogs = $textBlogs;
+    }
+
+    public function setCategory($category)
+    {
+        $this->category = $category;
+    }
+
+
+
+
 }

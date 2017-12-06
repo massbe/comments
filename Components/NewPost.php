@@ -11,14 +11,29 @@ namespace Components;
 
 class NewPost implements Publication
 {
-    public $headNews;
-    public $textNews;
+    private $headNews;
+    private $textNews;
     private $comments;
 
     public function __construct($headBlog, $textBlog)
     {
         $this->headNews = $headBlog;
         $this->textNews = $textBlog;
+    }
+
+    public function getTextNews()
+    {
+        return $this->textNews;
+    }
+
+    public function setHeadNews($headNews)
+    {
+        $this->headNews = $headNews;
+    }
+
+    public function setTextNews($textNews)
+    {
+        $this->textNews = $textNews;
     }
 
     public function addComment(Comment $comment)
@@ -34,6 +49,7 @@ class NewPost implements Publication
     public function getHead(){
         return $this->headNews;
     }
+
 }
 
 
